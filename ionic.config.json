@@ -1,0 +1,7 @@
+{
+  "name": "internship-react-native-app-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
