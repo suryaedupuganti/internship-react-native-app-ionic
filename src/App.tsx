@@ -1,6 +1,7 @@
 import React from "react";
 //import LoginPage from "./../src/pages/LoginPage/LoginPage";
 import MenuPage from "./../src/pages/MenuPage/MenuPage";
+
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -19,11 +20,15 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import ListPage from "./pages/ListPage/ListPage";
 
 const App: React.FC = () => {
   return (
     // <LoginPage></LoginPage>
-    <MenuPage></MenuPage>
+    <>
+      <MenuPage></MenuPage>
+      <ListPage></ListPage>
+    </>
   );
 };
 export default App;
