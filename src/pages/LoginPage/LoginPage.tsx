@@ -47,7 +47,7 @@ const LoginPage: React.FC<LoginProps> = ({ history }) => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonButton routerLink="/home">
+              <IonButton routerLink="/page/Home">
                 <IonIcon slot="start" />
                 Login
               </IonButton>

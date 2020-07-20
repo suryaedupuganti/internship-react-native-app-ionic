@@ -4,6 +4,7 @@ import { IonContent, IonList, IonLabel, IonItem, IonIcon } from "@ionic/react";
 import { addOutline } from "ionicons/icons";
 type ListProps = { item: string };
 const ListItem: React.FC<ListProps> = ({ item }) => {
+  console.log("item is: ", item);
   return (
     <IonContent>
       <IonList>

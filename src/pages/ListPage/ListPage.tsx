@@ -7,7 +7,7 @@ const ListPage: React.FC<ListProps> = ({ items }) => {
   return (
     <>
       {items.map((i) => (
-        <ListItem item={i}></ListItem>
+        <ListItem key={i} item={i}></ListItem>
       ))}
     </>
   );

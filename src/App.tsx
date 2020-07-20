@@ -10,13 +10,15 @@ import "@ionic/react/css/text-alignment.css";
 import "@ionic/react/css/text-transformation.css";
 import "@ionic/react/css/typography.css";
 
-import { IonApp } from "@ionic/react";
+import { IonApp, IonSplitPane, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import LoginPage from "./../src/pages/LoginPage/LoginPage";
+import Menu from "./components/Menu/Menu";
 import ListPage from "./pages/ListPage/ListPage";
+import Page from "./pages/HomePage/Page";
 
 /* Core CSS required for Ionic components to work properly */
 /* Basic CSS for apps built with Ionic */
@@ -30,16 +32,15 @@ const App: React.FC = () => {
       <div className="App">
         <IonApp>
           <IonReactRouter>
-            <Switch>
-              <Route exact path="/" component={LoginPage} />
-              <Route path="/login" component={LoginPage} />
-              <Route
-                path="/home"
-                render={() => (
-                  <ListPage items={["Item 1", "Item 2", "Item 3"]} />
-                )}
-              />
-            </Switch>
+            <IonSplitPane contentId="main">
+              <Menu />
+              <IonRouterOutlet id="main">
+                <Route exact path="/" component={LoginPage} />
+                <Route path="/login" component={LoginPage} exact />
+                <Route path="/page/Home" component={Page} exact />
+                <Route path="/page/Home/:name" component={Page} exact />
+              </IonRouterOutlet>
+            </IonSplitPane>
           </IonReactRouter>
         </IonApp>
       </div>
