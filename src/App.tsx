@@ -20,15 +20,17 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import { IonApp } from "@ionic/react";
 import ListPage from "./pages/ListPage/ListPage";
 
 const App: React.FC = () => {
+  const items = ["Item1", "Item2", "Item3"];
   return (
     // <LoginPage></LoginPage>
-    <>
+    <IonApp>
       <MenuPage></MenuPage>
-      <ListPage></ListPage>
-    </>
+      <ListPage items={items}></ListPage>
+    </IonApp>
   );
 };
 export default App;

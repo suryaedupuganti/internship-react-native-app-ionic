@@ -1,23 +1,15 @@
 import React from "react";
 import "./ListItem.css";
-import {
-  IonContent,
-  IonList,
-  IonLabel,
-  IonItem,
-  IonButton,
-  IonIcon,
-} from "@ionic/react";
-
-const ListItem: React.FC = () => {
+import { IonContent, IonList, IonLabel, IonItem, IonIcon } from "@ionic/react";
+import { addOutline } from "ionicons/icons";
+type ListProps = { item: string };
+const ListItem: React.FC<ListProps> = ({ item }) => {
   return (
     <IonContent>
       <IonList>
         <IonItem>
-          <IonLabel class="action-button"></IonLabel>
-          <IonButton>
-            <IonIcon slot="start" name="add"></IonIcon>Add Branch
-          </IonButton>
+          <IonLabel class="action-button"> {item}</IonLabel>
+          <IonIcon slot="start" icon={addOutline} />{" "}
         </IonItem>
       </IonList>
     </IonContent>

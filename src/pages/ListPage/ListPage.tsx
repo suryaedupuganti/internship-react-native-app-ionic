@@ -2,10 +2,13 @@ import React from "react";
 import "./ListPage.css";
 import ListItem from "../../components/LIstItem/ListItem";
 
-const ListPage: React.FC = () => {
+type ListProps = { items: string[] };
+const ListPage: React.FC<ListProps> = ({ items }) => {
   return (
     <>
-      <ListItem></ListItem>
+      {items.map((i) => (
+        <ListItem item={i}></ListItem>
+      ))}
     </>
   );
 };
