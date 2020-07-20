@@ -8,7 +8,7 @@ const ListItem: React.FC<ListProps> = ({ item }) => {
     <IonContent>
       <IonList>
         <IonItem>
-          <IonLabel class="action-button"> {item}</IonLabel>
+          <IonLabel class="action-button">{item}</IonLabel>
           <IonIcon slot="start" icon={addOutline} />{" "}
         </IonItem>
       </IonList>

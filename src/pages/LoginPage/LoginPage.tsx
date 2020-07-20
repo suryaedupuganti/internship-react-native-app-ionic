@@ -47,12 +47,7 @@ const LoginPage: React.FC<LoginProps> = ({ history }) => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonButton
-                onClick={(e) => {
-                  e.preventDefault();
-                  history.push("/home");
-                }}
-              >
+              <IonButton routerLink="/home">
                 <IonIcon slot="start" />
                 Login
               </IonButton>
