@@ -1,23 +1,27 @@
-import React from "react";
 import {
-  IonApp,
-  IonHeader,
-  IonContent,
-  IonToolbar,
-  IonTitle,
-  IonGrid,
-  IonRow,
+  IonButton,
   IonCol,
+  IonContent,
+  IonGrid,
+  IonHeader,
+  IonIcon,
+  IonInput,
   IonItem,
   IonLabel,
-  IonInput,
-  IonButton,
-  IonIcon,
+  IonRow,
+  IonTitle,
+  IonToolbar,
 } from "@ionic/react";
-import { helpOutline } from "ionicons/icons";
-const LoginPage: React.FC = () => {
+import { mailOutline } from "ionicons/icons";
+import React from "react";
+import { RouteComponentProps } from "react-router-dom";
+
+interface LoginProps extends RouteComponentProps {
+  setLogin: (b: boolean) => void;
+}
+const LoginPage: React.FC<LoginProps> = ({ history }) => {
   return (
-    <IonApp>
+    <>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Login Page</IonTitle>
@@ -43,7 +47,12 @@ const LoginPage: React.FC = () => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonButton>
+              <IonButton
+                onClick={(e) => {
+                  e.preventDefault();
+                  history.push("/home");
+                }}
+              >
                 <IonIcon slot="start" />
                 Login
               </IonButton>
@@ -53,13 +62,13 @@ const LoginPage: React.FC = () => {
             <IonCol>
               <IonButton>
                 Forgot password
-                <IonIcon slot="start" icon={helpOutline} />
+                <IonIcon slot="start" icon={mailOutline} />
               </IonButton>
             </IonCol>
           </IonRow>
         </IonGrid>
       </IonContent>
-    </IonApp>
+    </>
   );
 };
 export default LoginPage;
